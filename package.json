@@ -10,14 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abhi29-12-97/NodeJSAuthentication.git"
+    "url": "git+https://github.com/abhi29-12-97/Authentication"
   },
   "author": "Abhishek GArg",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/abhi29-12-97/NodeJSAuthentication/issues"
-  },
-  "homepage": "https://github.com/abhi29-12-97/NodeJSAuthentication#readme",
+  "homepage": "https://github.com/abhi29-12-97/Authentication",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bootstrap": "^5.2.1",
