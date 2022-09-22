@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -14,7 +13,6 @@
   },
   "author": "Abhishek GArg",
   "license": "ISC",
-  "homepage": "https://github.com/abhi29-12-97/Authentication",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bootstrap": "^5.2.1",
