@@ -2,9 +2,7 @@
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 dotenv.config();
-var uri =
-  process.env.MONGOLAB_URI ||
-  "mongodb+srv://abhishek:abhi123@cluster0.lwvy3ry.mongodb.net/Authentication?retryWrites=true&w=majority";
+var uri = process.env.MONGOLAB_URI || process.env.MONGODB_URI;
 const db = mongoose
   .connect(uri, {
     useNewUrlParser: true,
