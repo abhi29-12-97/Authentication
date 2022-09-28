@@ -8,9 +8,9 @@ const router = express.Router();
 router.get("/", Home.home);
 
 //signup page get request to show the form
-router.get("/signup", Home.signUpPage);
+router.get("/signup", Auth.checkNotAuthenticated, Home.signUpPage);
 //Signin page get request to show the form
-router.get("/login", Home.signInPage);
+router.get("/login", Auth.checkNotAuthenticated, Home.signInPage);
 //signup page post request to create the user
 router.post("/signup", Home.createUser);
 //signin page post request to Login
