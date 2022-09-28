@@ -42,6 +42,10 @@ export default class Home {
         req.flash("error", "Passwords do not match");
         return res.redirect("/signup");
       }
+      if (req.body.password === "") {
+        req.flash("error", "Password Empty");
+        return res.redirect("/signup");
+      }
       const salt = await bcrypt.genSalt(10);
       const hashpassword = await bcrypt.hash(req.body.password, salt);
       const user = await User.findOne({ email: req.body.email });
@@ -85,7 +89,7 @@ export default class Home {
   static update = async (req, res) => {
     try {
       const user = await User.findById(req.params.id);
-      if (user.email !== req.body.email) {
+      if (user.email !== req.body.email.toLowerCase()) {
         req.flash("error", "Email Doesn't match");
         return res.redirect("/home");
       }
@@ -100,10 +104,10 @@ export default class Home {
           { email: req.body.email },
           { $set: { password: hashpassword } }
         );
-        req.flash("success", "Password Changed Successfully! Please Login!");
-        return res.redirect("/login");
+        req.flash("success", "Password Changed Successfully!");
+        return res.redirect("/home");
       } else {
-        req.flash("error", "Password Doesn't match");
+        req.flash("error", "Old Password Doesn't match");
         return res.redirect("/home");
       }
     } catch (error) {
