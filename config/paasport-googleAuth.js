@@ -18,6 +18,7 @@ const authenticator = async (accessToken, refreshToken, profile, done) => {
       name: profile.displayName,
       email: profile.emails[0].value,
       password: crypto.randomBytes(20).toString("hex"),
+      isVerified: true,
     });
     console.log("authenticator new user ends", newUser);
     return done(null, newUser);

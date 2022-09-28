@@ -4,7 +4,7 @@ export default class Auth {
     if (req.isAuthenticated()) {
       return next();
     }
-    req.flash("error", "please login ");
+    req.flash("error", "please login to continue");
     return res.redirect("/login");
   };
 

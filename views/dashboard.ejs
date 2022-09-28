@@ -4,7 +4,9 @@
   <a href="/logout"><button class="button">Log Out</button> </a>
 </div>
 <p>
+  <% if(!user.isVerified){%>
   <a href="/reset/<%= user._id%>"
     ><button class="button">Reset password</button></a
   >
+  <%}%>
 </p>

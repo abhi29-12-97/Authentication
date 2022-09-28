@@ -50,6 +50,7 @@ export default class Home {
           name: req.body.name,
           email: req.body.email,
           password: hashpassword,
+          isVerified: false,
         });
         req.flash("success", "You have signed up, login to continue!");
         return res.redirect("/login");
